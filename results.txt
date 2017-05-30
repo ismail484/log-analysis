@@ -1,0 +1,21 @@
+
+Log Analysis
+
+1- the most popular three articles of all time: 
+
+the most popular three articles are 
+the article: candidate is jerk has ---> 338647 views 
+the article: bears love berries has ---> 253801 views 
+the article: bad things gone has ---> 170098 views 
+
+
+2- the most popular article authors of all time: 
+
+Mr.: Rudolf von Treppenwitz has ---> 423457 views 
+Mr.: Ursula La Multa has ---> 338184 views 
+Mr.: Anonymous Contributor has ---> 170098 views 
+Mr.: Markoff Chaney has ---> 84557 views. 
+
+3- The days did more than 1% of requests lead to errors: 
+
+the day : July 17,2016 has ---> 2.2626862468 %
