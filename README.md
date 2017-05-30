@@ -66,6 +66,8 @@ the views which I have created are :
 
 6-select name, sum(count)from the_authors group by name order by sum desc ;
 
+7-create view p_authors as select name, sum(count)from the_authors group by name order by sum desc ;
+
 - For third requirement 'the days did more than 1% of requests lead to errors' I create:
 
 1-create view total_request as select date_trunc('day',time)m,count(status)from log group by m order by m ;
