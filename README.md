@@ -23,9 +23,9 @@ it just needs ,Postgres SQL DB and pyton 2.7v or higher to run the application
 How to Run Project
 ------------------
 1. Download the project files:
- - newsdata.sql.tar.gz
- - views.sql
- - analysis.py
+  - newsdata.sql.tar.gz
+  - views.sql
+  - analysis.py
 
 2. unzip newsdata.sql.tar.gzusing tar xf newsdata.sql.tar  -C /destination.
 
