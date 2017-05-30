@@ -70,9 +70,9 @@ the views which I have created are :
 
 1-create view total_request as select date_trunc('day',time)m,count(status)from log group by m order by m ;
 
-2-create view total_error as select status,time from log where status like '404%';
+2-create view  total_error as select status,time from log where status like '404%';
 
-3-create view total_errors as select date_trunc('day',time)d,count(status) from total_error group by d order by d;
+3-create view  total_errors as select date_trunc('day',time)d,count(status) from total_error group by d order by d;
 
 4-create view all_request  as select total_request.m  as date, total_request.count as request ,total_errors.count as error from total_request join total_errors on total_request.m=total_errors.d order by total_request.m ;
 
