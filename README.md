@@ -24,9 +24,19 @@ How to Run Project
 ------------------
 1-Download the project files(newsdata.sql.tar.gz,analysis.py)
 
-2-unzip newsdata.sql.tar.gzusing tar xf newsdata.sql.tar  -C /destination
+2-unzip newsdata.sql.tar.gzusing tar xf newsdata.sql.tar  -C /destination.
 
-3-importnewsdata.sql into postgres SQL DB using " psql -d news -f newsdata.sql".
+3-check if I have already imported my newsdata.sql using (psql=> /list), if exists then escape step4 .
+
+4-if no ,then import newsdata.sql into postgres SQL DB using " psql -d news -f newsdata.sql".
+
+5-import all views that I have created ,follow this steps:
+  
+  a)Log into the psql console by typing: psql
+  
+  b)Connect to the news database with the command: \c news
+  
+  c)Once connected to the news database, import the views using: \i views.sql ;
 
 4- run analysis.py using "python analysis.py"
 
