@@ -34,11 +34,8 @@ How to Run Project
 4. if no ,then import newsdata.sql into postgres SQL DB using " psql -d news -f newsdata.sql".
 
 5. import all views that I have created ,follow this steps:
-  
        a. Log into the psql console by typing: psql
-  
        b. Connect to the news database with the command: \c news
-  
        c. Once connected to the news database, import the views using: \i views.sql ;
 
 6.  run analysis.py using "python analysis.py"
