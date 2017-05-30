@@ -54,19 +54,13 @@ the views which I have created are :
 
 - For second requirement 'the most popular article authors of all time' I create:
 
-1-create view test3 as select substring(path,10,1000) as m,count(path) from log group by m order by count desc ;
+1-create view author_articles as select articles.author,articles.slug ,authors.name from articles left join authors on articles.author=authors.id group by articles.author,articles.slug,authors.name order by articles.author ;
 
-2-create view test4  as select replace(m,'-',' ') as p_article ,count from test3 where m not like '';
+2-create view articles_request as select substring(path,10,1000) as article,count(path) from log group by article  order by count desc;
 
-3-create view my_author as select articles.author,articles.title ,authors.name from articles left join authors on articles.author=authors.id group by articles.author,articles.title,authors.name order by articles.author ;
+3-create view  author_viewers as select  author_articles.name, articles_request.count from author_articles left join articles_request on author_articles.slug  like articles_request.article;
 
-4--create view all_author as select author,lower(my_author.title),name from my_author;
-
-5--create view the_authors as select  all_author.name, test4.count from all_author left join test4  on all_author.lower  like concat(test4.p_article ,'%');
-
-6-select name, sum(count)from the_authors group by name order by sum desc ;
-
-7-create view p_authors as select name, sum(count)from the_authors group by name order by sum desc ;
+4-create view author_total_viewers as select name, sum(count)from author_viewers  group by name order by sum desc ;
 
 - For third requirement 'the days did more than 1% of requests lead to errors' I create:
 
