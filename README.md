@@ -58,9 +58,13 @@ the views which I have created are :
 
 2-create view test4  as select replace(m,'-',' ') as p_article ,count from test3 where m not like '';
 
-3-create view the_authors as select  all_author.name, test4.count from all_author left join test4  on all_author.lower  like concat(test4.p_article ,'%');
+3-create view my_author as select articles.author,articles.title ,authors.name from articles left join authors on articles.author=authors.id group by articles.author,articles.title,authors.name order by articles.author ;
 
-4-select name, sum(count)from the_authors group by name order by sum desc ;
+4--create view all_author as select author,lower(my_author.title),name from my_author;
+
+5--create view the_authors as select  all_author.name, test4.count from all_author left join test4  on all_author.lower  like concat(test4.p_article ,'%');
+
+6-select name, sum(count)from the_authors group by name order by sum desc ;
 
 - For third requirement 'the days did more than 1% of requests lead to errors' I create:
 
