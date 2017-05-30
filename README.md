@@ -46,13 +46,13 @@ Miscellaneous
 -------------
 the views which I have created are :
 
-For first requirement 'the most popular three articles of all time' I create:
+- For first requirement 'the most popular three articles of all time' I create:
 
 1- create view p_article as  select substring(path,10,1000) as m,count(path) from log group by m order by count desc limit 4;
 
 2-create view p_articles as select replace(m,'-',' ') as p_article ,count from p_article where m not like '';
 
-For second requirement 'the most popular article authors of all time' I create:
+- For second requirement 'the most popular article authors of all time' I create:
 
 1-create view test3 as select substring(path,10,1000) as m,count(path) from log group by m order by count desc ;
 
@@ -62,7 +62,7 @@ For second requirement 'the most popular article authors of all time' I create:
 
 4-select name, sum(count)from the_authors group by name order by sum desc ;
 
-For third requirement 'the days did more than 1% of requests lead to errors' I create:
+- For third requirement 'the days did more than 1% of requests lead to errors' I create:
 
 1-create view total_request as select date_trunc('day',time)m,count(status)from log group by m order by m ;
 
