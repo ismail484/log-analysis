@@ -32,7 +32,7 @@ try:
     db.close()
 
     print('--------------------------------------------')
-    print('the most popular three articles are')
+    print('the most popular article authors are')
     for a, b in posts:
       print  "Mr.:" ,a, " has --->", b ,"views"
     return posts
