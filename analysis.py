@@ -20,7 +20,7 @@ def connect(database_name="news"):
 
 def get_articles():
   try:
-    """Return the most popular three articles of all time  
+    """Return the most popular three articles of all time
      from the 'database', most popular first."""
     db, c = connect()
     c = db.cursor()
@@ -37,7 +37,7 @@ def get_articles():
 
 def get_authors():
   try:
-    """Return the most popular article authors of all time 
+    """Return the most popular article authors of all time
       from the 'database', most popular first."""
     db, c = connect()
     c = db.cursor()
@@ -55,7 +55,7 @@ def get_authors():
 
 def get_date():
   try:
-    """Return days did more than 1% of requests 
+    """Return days did more than 1% of requests
      lead to errors from the 'database'"""
     db, c = connect()
     c = db.cursor()
@@ -71,7 +71,6 @@ def get_date():
     return posts
   except:
     print("sorry it's a problem")
-
 if __name__ == '__main__':
   get_articles()
   get_authors()
