@@ -23,7 +23,6 @@ def get_articles():
         """Return the most popular three articles of all time
          from the 'database', most popular first."""
         db, c = connect()
-        c = db.cursor()
         c.execute("select * from p_articles;")
         posts = c.fetchall()
         db.close()
@@ -40,7 +39,6 @@ def get_authors():
         """Return the most popular article authors of all time
             from the 'database', most popular first."""
         db, c = connect()
-        c = db.cursor()
         c.execute("select * from author_total_viewers ;")
         posts = c.fetchall()
         db.close()
@@ -58,7 +56,6 @@ def get_date():
         """Return days did more than 1% of requests
          lead to errors from the 'database'"""
         db, c = connect()
-        c = db.cursor()
         c.execute("""select to_char(date,'MonthDD,YYYY'),
                              error_precentage from error_precentage
                              where error_precentage>1;""")
@@ -67,7 +64,7 @@ def get_date():
         print('--------------------------------------------')
         print('the days whcih have request error more than 1%')
         for day, precent in posts:
-            print "the day :", day, " has --->", precent, "%"
+            print "the day :", day, " has --->", precent, "% errors"
         return posts
     except:
         print("sorry it's a problem")
