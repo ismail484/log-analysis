@@ -7,8 +7,8 @@ import string
 
 def connect(database_name="news"):
     try:
-        """Connect to the PostgreSQL database"""
-        """Returns a database connection."""
+        """Connect to the PostgreSQL database
+         Returns a database connection."""
         db = psycopg2.connect("dbname={}".format(database_name))
         c = db.cursor()
         return db, c
@@ -20,8 +20,8 @@ def connect(database_name="news"):
 
 def get_articles():
   try:
-    """Return the most popular three articles of all time  """
-    """from the 'database', most popular first."""
+    """Return the most popular three articles of all time  
+     from the 'database', most popular first."""
     db, c = connect()
     c = db.cursor()
     c.execute("select * from p_articles;")
@@ -37,8 +37,8 @@ def get_articles():
 
 def get_authors():
   try:
-    """Return the most popular article authors of all time """
-    """from the 'database', most popular first."""
+    """Return the most popular article authors of all time 
+      from the 'database', most popular first."""
     db, c = connect()
     c = db.cursor()
     c.execute("select * from author_total_viewers ;")
@@ -55,8 +55,8 @@ def get_authors():
 
 def get_date():
   try:
-    """Return days did more than 1% of requests """
-    """lead to errors from the 'database'"""
+    """Return days did more than 1% of requests 
+     lead to errors from the 'database'"""
     db, c = connect()
     c = db.cursor()
     c.execute("""select to_char(date,'MonthDD,YYYY'),
