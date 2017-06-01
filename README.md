@@ -6,13 +6,13 @@ Project: Log analysis  - [Mohamed Ismail]
 Description
 -----------------------------------
 
-'''get statistics from Postgres SQL database and analyse it using python query'''
+- '''get statistics from Postgres SQL database and analyse it using python query'''
 
-'''it shows the most popular three articles of all time '''
+- '''it shows the most popular three articles of all time '''
 
-''then shows the most popular article authors of all time '''
+- ''then shows the most popular article authors of all time '''
 
-'''finally shows the days did more than 1% of requests lead to errors '''
+- '''finally shows the days did more than 1% of requests lead to errors '''
 
 Required Libraries and Dependencies
 -----------------------------------
